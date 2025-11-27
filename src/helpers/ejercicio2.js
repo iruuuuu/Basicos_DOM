@@ -8,6 +8,14 @@ const URL= import.meta.env.VITE_URL;
 const URL_PORT = `${URL}:${PORT}`
 
 export function CreateEjercicio2(){
+
+    //Este código define una función 
+    //llamada nofetch que devuelve el valor 
+    //de una variable llamada tareas. 
+    //La función no realiza ninguna solicitud
+    //de red o recupera datos de una fuente 
+    //externa. Simplemente obtiene el valor 
+    //de tareas y lo devuelve.
     function nofetch(){
         const data = tareas;
         return data;    
@@ -28,10 +36,17 @@ export function CreateEjercicio2(){
 
         const sinfetch = nofetch();
         let arrayfetch = []
+
+        /*
+        La línea hace lo siguiente:
+        fetching() llama a la función que hace un fetch a la API y retorna una Promise
+        .then(response => { arrayfetch.push(...response)}) es un callback que se ejecutará después cuando la Promise se resuelva
+        const fetch = guarda la Promise (no los datos) en la variable fetch
+        */
         const fetch =fetching().then(response => { arrayfetch.push(...response)});
         console.log(arrayfetch)
 
-        for (const tarea of arrayfetch) {
+        for (const tarea of sinfetch) {
             console.log(tarea)
             const li = document.createElement("li");
             li.classList.add("task-item")

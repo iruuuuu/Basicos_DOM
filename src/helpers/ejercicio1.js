@@ -14,7 +14,7 @@ export function Createejercicio1() {
 
 
     function fetching(){
-       return fetch(`${URL_PORT}/bienvenida`)
+        return fetch(`${URL_PORT}/bienvenida`)
         .then(response => response.json())
         .then(data => {return data.texto })
         .catch(error=>{ throw new Error("No se ha podido cargar el json")});
