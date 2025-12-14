@@ -10,27 +10,42 @@ export function createEjercicio4() {
 
 
     //renderTable
+    //esta funcion se encarga de renderizar (renderizar= mostrar) 
+    // la tabla de alojamientos es decir donde se muestran los alojamientos
     function renderTable(alojamientosArray) {
+        //creamos el contenedor que mostrara el contenido
         const container = document.createElement("div");
+        //le asignamos la clase o estilos asociados del css
         container.classList.add("alojamientos-container");
+        //creamos la tabla
         const table = document.createElement("table");
+        //le asignamos la clase o estilos asociados del css
         table.classList.add("alojamientos-table");
 
-        //thead
+        //thead supondra el encabezado de la tabla
+        //creamos la tabla
         const thead = document.createElement("thead");
+        //creamos un encabezado de la tabla que contendra los nombres de las columnas
         const trHead = document.createElement("tr");
+        //el .forEach para crear los th de la tabla; cada th sera una columna de la tabla
         ['Nombre', 'Ubicación', 'Precio', 'Rating'].forEach(headerText => {
+            //creamos el th
             const th = document.createElement("th");
+            //xxxxxxxx
             th.textContent = headerText;
             trHead.appendChild(th);
         });
+        //añadimos el encabezado a la tabla
         thead.appendChild(trHead);
+        //añadimos la tabla al contenedor
         table.appendChild(thead);
 
         //tbody
         const tbody = document.createElement("tbody");
+        //.forEach para crear las filas de la tabla; cada fila sera un alojamiento
         alojamientosArray.forEach(alojamiento => {
-            const tr = document.createElement("tr");
+            //creamos la fila
+            const tr = document.createElement("tr"); //tr es la fila de la tabla  
             //nombre
             const tdName = document.createElement("td");
             tdName.textContent = alojamiento.nombre;
@@ -56,8 +71,9 @@ export function createEjercicio4() {
         return container;
     }
 
-
     //render Function
+    //este render se encarga de renderizar (mostrar) los alojamientos
+    //a diferencia del rendreTable esta funcion renderiza los alojamientos
     function render() {
         const mainContainer = document.createElement("div");
 

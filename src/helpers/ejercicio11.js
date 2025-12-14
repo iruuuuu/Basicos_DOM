@@ -28,7 +28,6 @@
         isLoading: false,
     }
 
-
 /**
  * Devuelve una función que se ejecuta despues de un
  * tiempo de inactividad. La función se ejecuta
@@ -48,7 +47,6 @@
             timeout = setTimeout(() => func.apply(context, args), delay);
         };
     };
-
 
 /**
  * Busca personajes de Rick y Morty en la API
